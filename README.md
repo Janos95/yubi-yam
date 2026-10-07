@@ -79,6 +79,9 @@ their BOM and print settings.
 
 ### Hardware beyond Toyota's BOM
 
+The full shopping list, with MISUMI part numbers and US sources, is in
+[docs/BOM_US.md](docs/BOM_US.md).
+
 | Joint | Qty | Fastener |
 |---|---|---|
 | wrist flange → YAM wrist | 6 | M3×10 socket head (if the wrist is the assumed 4310 pattern) |
