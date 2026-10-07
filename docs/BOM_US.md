@@ -57,7 +57,7 @@ candidate for new adapters, not an automatic substitute for Toyota's A2024 parts
 
 | Shop | Relevant published capability | Price + Friday status |
 |---|---|---|
-| [finalREV, Berkeley](https://www.finalrev.com/services/millturn) | Advertises same-day Bay Area parts, single-part minimum and local pickup. [5-axis service](https://www.finalrev.com/services/5-axis-cnc) for larger/prismatic work. | **Quote required.** Millturn stock limit is 1-inch round; the gear shaft fits that diameter, the 32 mm gear does not. Confirm A2024 availability. |
+| [finalREV, Berkeley](https://www.finalrev.com/services/millturn) | Advertises same-day Bay Area parts, single-part minimum and local pickup. [5-axis service](https://www.finalrev.com/services/5-axis-cnc) for larger/prismatic work. | **RFQ sent October 6; response pending.** Millturn stock limit is 1-inch round; the gear shaft fits that diameter, the 32 mm gear does not. Confirm A2024 availability. |
 | [RivCut, Union City](https://www.rivcut.com/) | Milling/turning, 2024/6061/7075 aluminum; prototypes advertised as fast as three business days; pickup by appointment. | **Quote required.** No job-specific price, capacity reservation or Friday promise obtained. |
 | [twentyfour26, San Francisco](https://twentyfour26.com/) | Rapid prismatic machining in 6061-T6. | Conditional bracket backup: minimum internal radius and standard tolerances need checking against these parts. **Quote required.** |
 
@@ -65,7 +65,11 @@ Request one combined quote for the five preferred parts, the two optional finger
 attachments separately, and modification/machining of the late bought parts below.
 Require itemized setup, design revision, inspection, rush and pickup/delivery charges.
 As-machined/deburred finish avoids unnecessary cosmetic finishing cost. Quotes are not
-manufacturing authorization. No supplier quote request or machining order has been submitted.
+manufacturing authorization. **finalREV RFQ sent October 6, 2026** with the five-part
+base set, two optional finger attachments, source CAD and catalog-part modification
+requests. Requested itemized pricing, total pickup/delivery costs and committed Friday
+October 9 availability. **Awaiting response; price and Friday capacity are unconfirmed.**
+Other supplier RFQs have not been sent. No machining order has been placed.
 
 ## Robot motion and alignment parts
 
