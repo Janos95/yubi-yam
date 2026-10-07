@@ -170,7 +170,7 @@ def check_grasp(xml_path, report, render):
     mujoco.mj_forward(model, data)
 
     frames, views = [], []
-    renderer = None
+    renderer = cam = wide = close = None
     if render:
         renderer = mujoco.Renderer(model, 480, 640)
         cam = mujoco.MjvCamera(); cam.lookat[:] = [0.33, 0, 0.12]; cam.distance = 0.42
@@ -323,7 +323,7 @@ def main():
     xml = check_sdk(i2rt_dir, report)
     ok = check_grasp(xml, report, render=not args.no_render)
     ok &= check_reach(xml, report)
-    report["sdk"]["model_path"] = os.path.basename(report["sdk"]["model_path"])
+    report["sdk"].pop("model_path", None)   # temp path, differs per run
     json.dump(report, open(os.path.join(HERE, "check_report.json"), "w"), indent=1)
     print("all checks passed" if ok else "SOME CHECKS FAILED")
     sys.exit(0 if ok else 1)
