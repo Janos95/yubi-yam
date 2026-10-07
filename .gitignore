@@ -1,3 +1,4 @@
 __pycache__/
 *.pyc
 docs/.fig_meshes/
+cad/out/printed/adafruit_as5600_reference.*

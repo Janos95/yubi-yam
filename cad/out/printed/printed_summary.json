@@ -1,0 +1,23 @@
+{
+ "drive_R_printed": {
+  "volume_mm3": 10554.3,
+  "stl_watertight": true
+ },
+ "drive_L_printed": {
+  "volume_mm3": 9328.6,
+  "stl_watertight": true
+ },
+ "bearing_shim_1mm": {
+  "volume_mm3": 53.2,
+  "stl_watertight": true
+ },
+ "glove_R_air_gap_mm": 2.0,
+ "glove_R_board_to_finger_mm": 1.54,
+ "glove_L_air_gap_mm": 2.0,
+ "glove_L_board_to_finger_mm": 1.54,
+ "glove_upper_plate_as5600": {
+  "volume_mm3": 16969.2,
+  "stl_watertight": true
+ },
+ "failures": []
+}

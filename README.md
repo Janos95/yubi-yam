@@ -62,6 +62,11 @@ gripper: about 0.70 kg), with the grasp point 143 mm from the wrist face (stock:
 
 ## Build
 
+> **Weekend / first build:** a fully printed version of the gripper and the gloves,
+> using only parts available in the US within a couple of days, is described in
+> [docs/PRINTED_PROTOTYPE.md](docs/PRINTED_PROTOTYPE.md). The sections below are the
+> proper build.
+
 ### Print
 
 STEP and STL files are in `cad/out/` (in Toyota's assembly coordinates; STEP is best
@@ -160,9 +165,11 @@ All dimensions come from published CAD:
 ```
 cad/build.py           parametric parts, built from Toyota's CAD
 cad/out/               STEP + STL of the new parts, build_summary.json
+cad/printed.py         fully printed prototype parts -> cad/out/printed/
+cad/vendor/            Adafruit AS5600 board model (MIT) for the glove fit check
 sim/                   travel sweep, i2RT model generator, checks
 sdk/                   i2RT patch, overlay (config, model, meshes), install.sh
-docs/                  figures
+docs/                  parts list, printed-prototype guide, figures
 third_party/yubi-hw    Toyota's YUBI hardware (submodule)
 third_party/i2rt       i2RT SDK (submodule)
 ```

@@ -8,6 +8,10 @@ are modified from it:
 - `bracket_trimmed` is Toyota's `BRACKET_GRIPPER`, cut back.
 - `motor_bracket` reuses the case-side tab of Toyota's `BRACKET_DYNAMIXEL`.
 - `coupler` reproduces the Dynamixel horn interface on Toyota's `GEAR_SHAFT`.
+- `cad/out/printed/drive_R_printed` / `drive_L_printed` merge Toyota's `GEAR_SHAFT`
+  and the catalogue gear, shaft, key and washers of Toyota's assembly into single printable parts.
+- `cad/out/printed/glove_upper_plate_as5600` is Toyota's glove `UPPER PLATE_CAMERA BKT`
+  with new mounting bosses for an Adafruit AS5600 board.
 
 Meshes under `sim/assets/` and `sdk/overlay/` are generated from Toyota's STEP files.
 
@@ -21,3 +25,7 @@ gripper files.
 v1.1 (Enactic, CERN-OHL-S-2.0). It was used for measurements only; no geometry from it
 is included here. `cad/out/dm4310_envelope_reference.step` is a plain cylinder drawn
 from those dimensions.
+
+**Adafruit AS5600 board model.** `cad/vendor/adafruit_6357_as5600.step` is from
+https://github.com/adafruit/Adafruit_CAD_Parts, copyright Adafruit Industries, MIT
+licence (`cad/vendor/LICENSE-adafruit-cad-parts`). Used for the glove fit check only.
