@@ -51,7 +51,9 @@ prototype, and the final glove if it works well, uses the
   same 2.0 mm air gap, components facing the magnet, 1.5 mm clear of the finger.
   One plate fits both hands; Toyota uses the same upper plate for left and right.
 - **Mounting:** 4× M2×6 socket head screws, self-tapping into the bosses (Ø1.7 pilots).
-  They come in the mixed screw kit on the parts list.
+  Use the M2-only screw kit on the parts list, which explicitly lists 30 M2×6 screws.
+  The original 888-piece mixed kit has M2×12/16 only and does not cover this mount.
+  The two original CBSTNR3-5 encoder-mount screws per glove are no longer needed.
 - **Wiring:** solder four wires to the header pads on the back (VIN to 3V3, GND, SCL,
   SDA) and run them to the XIAO as in Toyota's wiring. The STEMMA QT sockets face the
   magnet side and aren't used.
@@ -61,14 +63,20 @@ prototype, and the final glove if it works well, uses the
 The board model used for the fit check is Adafruit's own
 (`cad/vendor/adafruit_6357_as5600.step`, MIT licence).
 
-## Order list differences (vs. `docs/BOM_US.md`)
+## Order list changes from the original proper-build BOM
+
+These changes are incorporated in [BOM_US.md](BOM_US.md). The
+[proposed shopping list](SHOPPING_LIST_2026-10-09.md) uses one robot and one right-hand
+glove, with two encoder boards and two magnets explicitly requested for purchase.
 
 | Change | Per gripper / glove |
 |---|---|
 | add 695ZZ bearings, 5×13×4 mm | 3 per gripper |
 | add M5×0.8 × 70 mm socket head screw (stands in for the late AJKTNS5-70) | 1 per glove |
 | encoder board: **Adafruit 6357** instead of MIKROE-4204 (the Mikroe board is 28.6×25.4 mm and doesn't fit the glove) | 1 per glove |
-| M2×6 socket head screws for the board (already in the mixed kit) | 4 per glove |
+| add M2×6 socket head screws for the board (covered by the replacement M2-only kit) | 4 per glove; 12 total with the original 4 robot + 4 glove screws |
+| remove CBSTNR3-5 encoder-mount screws | 2 per glove |
+| Radial Magnets 9042 diametric magnet; not included with the board | 1 per glove; buy 2 per purchasing request |
 | skip for now: gears, stepped shaft, keys, precision washers, NSK bearings, diamond pin, machining | |
 
 ## Print list per set
