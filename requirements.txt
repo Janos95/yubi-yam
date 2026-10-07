@@ -1,0 +1,19 @@
+# CAD build (cad/build.py) and travel sweep
+cadquery==2.8.0
+trimesh>=4
+numpy>=2
+python-fcl>=0.7
+# sim checks (sim/check_sim.py) and figures; MuJoCo renders headless with MUJOCO_GL=osmesa
+mujoco>=3.3.5
+matplotlib>=3.8
+# what i2RT's get_robot imports, so the checks can run the real SDK code path
+pyyaml>=6
+python-can==4.5.0
+tyro>=1.0
+crcmod-plus>=2.3.1
+pydantic>=2
+ruckig>=0.15
+portal==3.7.3
+dm-env==1.6
+mcap>=1.1
+mcap-ros2-support>=0.5.5

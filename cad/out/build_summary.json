@@ -1,0 +1,121 @@
+{
+ "params": {
+  "wrist": {
+   "bolt_circle_d": 27.0,
+   "bolt_count": 6,
+   "bolt_clearance_d": 3.4,
+   "head_counterbore_d": 6.0,
+   "pilot_d": 35.3,
+   "pilot_depth": 0.8,
+   "phase_deg": 0.0
+  },
+  "motor_d": 57.0,
+  "motor_body_len": 45.0,
+  "motor_boss_d": 35.0,
+  "motor_boss_len": 1.0,
+  "motor_rotor_pcd": 27.0,
+  "motor_stator_pcd": 50.0,
+  "motor_clock_deg": 0.0,
+  "pad_relief_deg": [
+   40.0,
+   150.0
+  ],
+  "pad_relief_r": 25.0,
+  "pad_relief_y": 835.0,
+  "shaft_x": 839.07,
+  "shaft_z": 1270.57,
+  "shaft_face_y": 840.5,
+  "shaft_horn_pcd": 16.0,
+  "shaft_pilot_d": 8.0,
+  "shaft_pilot_depth": 3.0,
+  "case_back_y": 839.5,
+  "case_hole_d": 22.0,
+  "bracket_plate_t": 6.0,
+  "flange_under_motor_y": 833.6,
+  "flange_plate_t": 8.0,
+  "flange_hub_d": 44.0,
+  "flange_hub_h": 10.0,
+  "flange_plate_ymax": 873.0,
+  "trim_y": 839.6,
+  "wrist_axis_x": 854.07,
+  "wrist_axis_y": 856.5
+ },
+ "derived": {
+  "stator_face_y": 833.5,
+  "rotor_face_y": 834.5,
+  "wrist_face_z": 1224.5735,
+  "gripper_frame_origin_mm": [
+   854.07,
+   856.5,
+   1224.5735
+  ]
+ },
+ "parts": {
+  "coupler": {
+   "volume_cm3": 4.32,
+   "pla_g_100pct": 5.4,
+   "size_mm": [
+    35.0,
+    8.8,
+    35.0
+   ]
+  },
+  "motor_bracket": {
+   "volume_cm3": 12.87,
+   "pla_g_100pct": 16.0,
+   "size_mm": [
+    79.4,
+    14.0,
+    58.5
+   ]
+  },
+  "bracket_trimmed": {
+   "volume_cm3": 10.37,
+   "pla_g_100pct": 12.9,
+   "size_mm": [
+    84.0,
+    33.4,
+    8.0
+   ]
+  },
+  "yam_flange": {
+   "volume_cm3": 36.92,
+   "pla_g_100pct": 45.8,
+   "size_mm": [
+    84.0,
+    44.9,
+    18.1
+   ]
+  }
+ },
+ "interference": [],
+ "mass_kg": {
+  "base": 0.4434,
+  "finger_r": 0.0983,
+  "finger_l": 0.0935,
+  "note": "DM4310 325 g, camera 20 g, screws ~15 g; printed parts at 60 % fill PLA"
+ },
+ "sim": {
+  "axis_r": [
+   -0.015,
+   0.0065,
+   -0.045996
+  ],
+  "axis_l": [
+   0.015,
+   0.0065,
+   -0.045996
+  ],
+  "axis_dir": [
+   0.0,
+   1.0,
+   0.0
+  ],
+  "pad_tip_z": -0.151026,
+  "camera": [
+   0.000294,
+   -0.041535,
+   -0.046278
+  ]
+ }
+}

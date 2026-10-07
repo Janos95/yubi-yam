@@ -1,0 +1,37 @@
+diff --git a/i2rt/robot_models/__init__.py b/i2rt/robot_models/__init__.py
+index 13ab83e..42f9b74 100644
+--- a/i2rt/robot_models/__init__.py
++++ b/i2rt/robot_models/__init__.py
+@@ -72,3 +72,4 @@ GRIPPER_LINEAR_4310_PATH = os.path.join(_ROBOT_MODELS_ROOT, "gripper/linear_4310
+ GRIPPER_TEACHING_HANDLE_PATH = os.path.join(_ROBOT_MODELS_ROOT, "gripper/yam_teaching_handle/yam_teaching_handle.xml")
+ GRIPPER_FLEXIBLE_4310_PATH = os.path.join(_ROBOT_MODELS_ROOT, "gripper/flexible_4310/flexible_4310.xml")
+ GRIPPER_NO_GRIPPER_PATH = os.path.join(_ROBOT_MODELS_ROOT, "gripper/no_gripper/no_gripper.xml")
++GRIPPER_YUBI_4310_PATH = os.path.join(_ROBOT_MODELS_ROOT, "gripper/yubi_4310/yubi_4310.xml")
+diff --git a/i2rt/robots/utils.py b/i2rt/robots/utils.py
+index 77866f4..c297bae 100644
+--- a/i2rt/robots/utils.py
++++ b/i2rt/robots/utils.py
+@@ -190,6 +190,7 @@ from i2rt.robot_models import (
+     GRIPPER_LINEAR_3507_PATH,
+     GRIPPER_LINEAR_4310_PATH,
+     GRIPPER_NO_GRIPPER_PATH,
+     GRIPPER_TEACHING_HANDLE_PATH,
++    GRIPPER_YUBI_4310_PATH,
+     get_arm_xml_path,
+ )
+@@ -478,6 +479,7 @@ class GripperType(enum.Enum):
+     LINEAR_3507 = "linear_3507"  # a 3507 motor with a linear actuator
+     LINEAR_4310 = "linear_4310"  # a 4310 motor with a linear actuator
+     FLEXIBLE_4310 = "flexible_4310"  # a 4310 motor with flexible soft tips
++    YUBI_4310 = "yubi_4310"  # YUBI bidigital gripper (Toyota/AIRoA) driven by a 4310 through 1:1 spur gears
+ 
+     # technically not a gripper
+     YAM_TEACHING_HANDLE = "yam_teaching_handle"
+@@ -512,6 +514,7 @@ class GripperType(enum.Enum):
+             GripperType.FLEXIBLE_4310: GRIPPER_FLEXIBLE_4310_PATH,
+             GripperType.YAM_TEACHING_HANDLE: GRIPPER_TEACHING_HANDLE_PATH,
+             GripperType.NO_GRIPPER: GRIPPER_NO_GRIPPER_PATH,
++            GripperType.YUBI_4310: GRIPPER_YUBI_4310_PATH,
+         }
+         if self not in _xml_map:
+             raise ValueError(f"Unknown gripper type: {self}")
