@@ -86,6 +86,14 @@ they have a Ø2 press-fit shank, Ø3 positioning head, 4 mm mounting length and 
 positioning length. Preserve the round/diamond pairing. The original washer has ID
 5.1–5.3 mm, OD 9.8–10 mm and thickness 1 ±0.05 mm. Verify any replacement's tolerance.
 
+**Cheaper spacer candidate:** [KB3D SS-5101-50 DIN 988 shim rings](https://kb-3d.com/store/inserts-fasteners-adhesives/288-5x10x1mm-shim-ring-washer-pack-of-50-din988-1634423113147.html)
+are **$3.79 per pack of 50**, with **two packs in stock** in the retailer listing.
+Nominal dimensions are 5 × 10 × 1 mm; stainless steel replaces the original aluminum.
+Confirm actual ID/OD/thickness tolerances, shaft/fillet clearance and flat seating
+before using them as WSSAB replacements. They are a credible low-cost precision-shim
+candidate, not an ordinary M5 washer. Shipping from Ohio must be expedited and quoted;
+the retailer publishes a 2 pm Eastern same-day cutoff, not a Friday-arrival guarantee.
+
 [NSK's catalog](https://www.nskmicro.co.jp/english/download/catalog_pdf/bearing/croxy_en.pdf)
 explains the angular-contact/preload design. Radwell lists `MTA05-13ZZ DB`, a different
 paired configuration, not the specified `DBS`; buying/separating those is **not an
