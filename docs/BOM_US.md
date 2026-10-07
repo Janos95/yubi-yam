@@ -1,5 +1,11 @@
 # Parts list (US sourcing)
 
+Two builds: the **robot gripper** (this repo's modified YUBI, on the YAM) and the
+**handheld** for data collection (Toyota's YUBI glove, built unmodified). The glove part
+list is [further down](#handheld-yubi-glove-one-right-hand).
+
+## Robot gripper
+
 Everything you buy for one yubi-yam gripper. It is Toyota's
 [YUBI robot-gripper BOM](https://github.com/Toyota/yubi-hw/blob/main/docs/BOM/YUBI%20Gripper_DYNAMIXEL_BOM.md)
 without the Dynamixel and UR5e parts, plus the parts this design adds. Toyota's links go
@@ -13,14 +19,14 @@ same-day shipping, for eligible parts; get a quote to see which ones qualify. Or
 1 pm ET (10 am PT). The generic items also come from Amazon or McMaster-Carr, usually in
 1–2 days in the Bay Area.
 
-## Not bought
+### Not bought
 
 | Part | Source |
 |---|---|
 | DM4310 motor | out of your stock YAM gripper |
 | printed parts | Toyota's `STL/gripper/` (case, upper plate, finger pads, flaps, finger attachments) and this repo's `cad/out/` (flange, trimmed bracket, motor bracket, coupler) |
 
-## Motion parts (order first)
+### Motion parts (order first)
 
 | Qty | Part | MISUMI P/N | Size (from CAD) | Alternative |
 |---|---|---|---|---|
@@ -31,14 +37,14 @@ same-day shipping, for eligible parts; get a quote to see which ones qualify. Or
 | 3 | washer | `WSSAB10-5-1` | Ø10 × Ø5 × 1 mm | any M5 thin washer with a 5.0–5.3 mm hole |
 | 2 | parallel key | `KEG3-8` | 3 × 3 × 8 mm | any 3 × 3 × 8 mm key |
 
-## Camera and pads
+### Camera and pads
 
 | Qty | Part | Where |
 |---|---|---|
 | 1 | ELP-USBFHD01M-L180 fisheye USB camera (the exact one Toyota uses) | [Amazon](https://www.amazon.com/dp/B00LQ854AG) |
 | 1 | 1.5 mm rubber sheet for the finger pads (Toyota: NBR "HYPER V" sheet) | any 1.5 mm NBR or silicone sheet, adhesive-backed if possible |
 
-## Screws, inserts, pins
+### Screws, inserts, pins
 
 | Qty | Fastener | MISUMI P/N | Used for |
 |---|---|---|---|
@@ -66,19 +72,66 @@ Low-head (DIN 7984) screws: McMaster-Carr "low-profile socket head screws", or M
 low-head cap screws. Toyota's ultra-low-head `CBSTNR` screws also work where the length
 matches.
 
-## Not needed from Toyota's BOM
+### Not needed from Toyota's BOM
 
 Dynamixel XM430-W350-R, `BRACKET_DYNAMIXEL`, `BRACKET_GRIPPER` (replaced by the printed
 trimmed bracket), `UR5e_FLANGE`, and the UR5e-only screws and pins (`CBE6-10`,
 `XDSHC6-P4-L6-B5`), 4 of the 7 `CB2.5-15` (they held the Dynamixel), and the horn's centre
 `CBSTNR2.5-6`, which is optional with the coupler.
 
+## Handheld: YUBI glove, one right hand
+
+Built exactly as in Toyota's
+[glove assembly guide](https://github.com/Toyota/yubi-hw/tree/main/docs/AssemblyInstruction)
+and [BOM](https://github.com/Toyota/yubi-hw/blob/main/docs/BOM/YUBI%20Glove%20Assy_BOM.md),
+no changes. The glove's fingers have their gears printed in, so it needs no metal gears.
+
+**Printed** (Toyota's `STL/glove/`): upper plate, under plate, `FINGER with Gear_t30_R`,
+`FINGER with Gear_t20_L`, both flaps, grip, `HOLDER_Quest_R`, `COVER_PCB_R`,
+`COVER_CABLE_R`.
+
+| Qty | Part | Where | Note |
+|---|---|---|---|
+| 1 | Meta Quest Touch Plus controller, right | the one from your Quest 3 | buy a spare only if you want to keep using the Quest normally |
+| 1 | ELP-USBFHD01M-L180 fisheye camera | [Amazon](https://www.amazon.com/dp/B00LQ854AG) | the same camera as on the robot gripper, so order 2 in total |
+| 1 | Seeed XIAO ESP32C6 | Seeed, DigiKey or Amazon | runs the encoder firmware in [yubi-sw](https://github.com/airoa-org/yubi-sw/tree/main/firmware/ESP32C6_AS5601) |
+| 1 | AS5601 encoder breakout, 20 × 13.5 mm, M3 holes 15 mm apart, magnet included | [Switch Science #3494](https://www.switch-science.com/products/3494) (ships from Japan) | **the one item unlikely to arrive this week**; the glove's pocket is sized for this board. Other AS5601 modules (e.g. Elecrow) need their size checked |
+| 1 | perfboard, 1 × 1 inch | SparkFun 08808 (DigiKey) or any | carries the XIAO |
+| 2 | USB-C cables | any | camera and XIAO to the PC |
+| 1 | 1.5 mm rubber sheet | the same sheet as for the gripper | |
+| 1 | small rubber band (Japanese size No. 16) | any | |
+
+| Qty | Fastener | MISUMI P/N |
+|---|---|---|
+| 4 | M2 × 6 socket head | `CB2-6` |
+| 2 | M2.5 × 6 socket head | `CB2.5-6` |
+| 2 | M2.5 × 8 socket head | `CB2.5-8` |
+| 3 | M2.5 × 15 socket head | `CB2.5-15` |
+| 1 | M3 × 6 socket head | `CB3-6` |
+| 2 | M3 × 5 ultra-low head | `CBSTNR3-5` |
+| 1 | M3 × 6 knurled thumb screw | `LRLM3-6` |
+| 1 | M5 adjusting bolt, 70 mm | `AJKTNS5-70` |
+| 1 | M5 T-slot nut | `HNTT5-5` |
+| 5 | brass insert | `SB-264040` |
+| 2 | brass insert | `SB-304540` |
+| 4 | POM bushing | `JZF8-5` |
+
+### Tabletop rig (optional)
+
+Toyota's rig is an aluminium-extrusion frame that holds the Quest headset above the desk
+(`STL/stationary/Quest_mount.stl`), plus a RealSense overhead camera and a USB foot pedal
+to start and stop recordings. For a first setup, the printed Quest mount on a tripod or a
+clamp arm does the same job. Your SO-101 cameras can stand in for the RealSense, and a
+foot pedal (any USB one) is a nice-to-have.
+
 ## Weekend plan
 
-1. **Tonight:** Amazon (camera, rubber sheet, inserts) and McMaster (screws, keys, 695ZZ
-   bearings, washers).
-2. **Tomorrow before 10 am PT:** MISUMI quote for the two gears and the left shaft, with
-   express shipping if available.
+1. **Tonight:** Amazon (2 cameras, XIAO ESP32C6, rubber sheet, inserts) and McMaster
+   (screws, keys, 695ZZ bearings, washers). Order the AS5601 board from Switch Science;
+   until it arrives the glove works for tracking, just without the gripper opening.
+2. **Tomorrow before 10 am PT:** MISUMI quote for the two gears, the left shaft and the
+   glove's MISUMI-only parts (`JZF8-5` bushings, `AJKTNS5-70`, `HNTT5-5`, `LRLM3-6`),
+   with express shipping where available.
 3. **Meanwhile:** print everything, including Toyota's `GEAR SHAFT.stl` as a stand-in.
 4. If the gears don't make it, you can still assemble and test the motor, the coupler and
    the wrist fit, and add the fingers when the gears arrive.
