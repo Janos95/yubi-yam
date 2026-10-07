@@ -5,6 +5,10 @@ parts available within a couple of days in the US. It lets us test the mechanics
 wiring, Quest tracking and recording before the precision parts arrive.
 The proper build (MISUMI gears and shaft, NSK bearings, machined adapters) replaces
 it later; the glove is already the final design apart from its encoder board.
+The current order covers **two robot grippers and two gloves, one left and one right**.
+Both gloves use the same purchased hardware. For the left glove, print Toyota's
+`FINGER with Gear_t30_L` / `FINGER with Gear_t20_R`, `HOLDER_Quest_L`, `COVER_PCB_L`
+and `COVER_CABLE_L`; use the corresponding right-hand parts for the right glove.
 
 ![printed parts](img/printed_parts.png)
 
@@ -13,6 +17,8 @@ checks every new part for interference against the Toyota assemblies (robot grip
 left glove, right glove). Figure: `python3 docs/make_printed_figure.py`.
 
 ## Robot gripper: what changes
+
+The quantities below are per gripper; the current order needs two sets.
 
 | Proper build | Printed prototype |
 |---|---|
@@ -66,26 +72,27 @@ The board model used for the fit check is Adafruit's own
 ## Order list changes from the original proper-build BOM
 
 These changes are incorporated in [BOM_US.md](BOM_US.md). The
-[proposed shopping list](SHOPPING_LIST_2026-10-09.md) uses one robot and one right-hand
-glove, with two encoder boards and two magnets explicitly requested for purchase.
+[proposed shopping list](SHOPPING_LIST_2026-10-09.md) uses two robots and two gloves
+(one left, one right), with one encoder board and one magnet per glove. All four
+glove-electronics lines are in the same overnight DigiKey cart.
 
 | Change | Per gripper / glove |
 |---|---|
 | add 695ZZ bearings, 5×13×4 mm | 3 per gripper |
 | add M5×0.8 × 70 mm socket head screw (stands in for the late AJKTNS5-70) | 1 per glove |
 | encoder board: **Adafruit 6357** instead of MIKROE-4204 (the Mikroe board is 28.6×25.4 mm and doesn't fit the glove) | 1 per glove |
-| add M2×6 socket head screws for the board (covered by the replacement M2-only kit) | 4 per glove; 12 total with the original 4 robot + 4 glove screws |
+| add M2×6 socket head screws for the board (covered by the replacement M2-only kit) | 4 per glove; 24 total with 8 robot + 8 original glove + 8 encoder-mount screws |
 | remove CBSTNR3-5 encoder-mount screws | 2 per glove |
-| Radial Magnets 9042 diametric magnet; not included with the board | 1 per glove; buy 2 per purchasing request |
+| Radial Magnets 9042 diametric magnet; not included with the board | 1 per glove; buy 2 total |
 | skip for now: gears, stepped shaft, keys, precision washers, NSK bearings, diamond pin, machining | |
 
-## Print list per set
+## Print list for this order
 
-| Part | Source | Qty (1 gripper + 1 glove) |
+| Part | Source | Qty (2 grippers + 2 gloves) |
 |---|---|---|
-| `drive_R_printed`, `drive_L_printed` | `cad/out/printed/` | 1 each |
-| `bearing_shim_1mm` | `cad/out/printed/` | 3 |
-| `coupler`, `motor_bracket`, `bracket_trimmed`, `yam_flange` | `cad/out/` | 1 each |
-| case, upper plate, finger attachments L/R, pads, flaps | Toyota `STL/gripper` | per Toyota BOM |
-| `glove_upper_plate_as5600` | `cad/out/printed/` (replaces Toyota's glove upper plate) | 1 |
-| under plate, fingers with gear, flaps, grip, Quest holder, PCB/cable covers | Toyota `STL/glove`, `_R` or `_L` parts for the hand | per Toyota BOM |
+| `drive_R_printed`, `drive_L_printed` | `cad/out/printed/` | 2 each |
+| `bearing_shim_1mm` | `cad/out/printed/` | 6 |
+| `coupler`, `motor_bracket`, `bracket_trimmed`, `yam_flange` | `cad/out/` | 2 each |
+| case, upper plate, finger attachments L/R, pads, flaps | Toyota `STL/gripper` | two grippers per Toyota BOM |
+| `glove_upper_plate_as5600` | `cad/out/printed/` (replaces Toyota's glove upper plate) | 2; same plate for both hands |
+| under plate, fingers with gear, flaps, grip, Quest holder, PCB/cable covers | Toyota `STL/glove`, hand-specific parts as listed above | one left + one right glove per Toyota BOM |
