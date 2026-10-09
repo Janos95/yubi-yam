@@ -86,6 +86,9 @@ their BOM and print settings.
 
 The full shopping list, with MISUMI part numbers and US sources, is in
 [docs/BOM_US.md](docs/BOM_US.md).
+The [proposed October 9 shopping list](docs/SHOPPING_LIST_2026-10-09.md) records the
+prepared vendor carts, printed-prototype substitutions, Hayward pickup and
+unconfirmed delivery details. Nothing has been ordered.
 
 | Joint | Qty | Fastener |
 |---|---|---|

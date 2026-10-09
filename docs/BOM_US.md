@@ -2,11 +2,22 @@
 
 Scope: **one YAM robot gripper + one right-hand YUBI data-collection glove**.
 Target: **delivery to San Francisco 94158, or Bay Area pickup, by Friday October 9, 2026**.
-Prices checked October 6, 2026 (Pacific time); USD, before tax unless stated.
+Prices initially checked October 6, 2026 (Pacific time); selected cart contents and
+prices updated October 7. USD, before tax unless stated. The purchase quantities
+cover **one robot and one right-hand glove**, plus a spare Adafruit 6357 board and
+Radial 9042 magnet (two of each bought). Buy one of each shared pack. Status October 8
+evening: the M5 screws are bought; Friday arrival is no longer possible for MISUMI,
+McMaster or DigiKey (expect Monday October 12). See the shopping list for details.
 Nothing in this list has been ordered. Stock and delivery estimates must be checked again at checkout.
 
-**Sourcing is not complete under the Friday constraint.** The exact gears and stepped
-shaft currently ship after Friday. Custom machining, bearings, inserts and several
+See the [proposed October 9 shopping list](SHOPPING_LIST_2026-10-09.md) for the prepared
+carts and the [printed prototype](PRINTED_PROTOTYPE.md) for the weekend substitutions.
+The prototype uses printed drive parts/adapters, three 695ZZ bearings with printed
+shims, and a stock M5 socket-head screw. Keep the late precision parts in a separate
+proper-build shipment.
+
+**Proper-build sourcing is not complete under the Friday constraint.** The exact
+gears and stepped shaft currently ship after Friday. Custom machining, bearings, inserts and several
 small precision parts still need confirmation. A catalog link does not mean a part is
 available in time. We have not established a lowest delivered price for the whole build.
 
@@ -45,7 +56,7 @@ print-oriented adapter STEP files without resolving their threaded features.
 | YAM `yam_flange` | Prefer machined aluminum | [STEP](../cad/out/yam_flange.step); convert two M3 insert pockets to metal threads and measure the real wrist before release. |
 | Toyota `FINGER ATTACHMENT_L/R` (2) | Optional A2024 machining upgrade | Toyota allows machined A2024 or printed PLA. Price separately; printing does not guarantee equal stiffness/precision. |
 | Robot case, upper plate/camera bracket, three pad bodies, two flaps | Print as in Toyota's design | [STL/gripper](https://github.com/Toyota/yubi-hw/tree/main/STL/gripper); inspect bearing seats and assembly fit. |
-| Glove upper/under plates, two geared fingers, two flaps, grip, right controller holder, PCB/cable covers | Print as in Toyota's design | [STL/glove](https://github.com/Toyota/yubi-hw/tree/main/STL/glove). Right hand uses `FINGER with Gear_t30_R` and `FINGER with Gear_t20_L`. No bought metal gears for the glove. |
+| Glove upper/under plates, two geared fingers, two flaps, grip, right controller holder, PCB/cable covers | Print; use the adapted AS5600 upper plate | [Printed prototype](PRINTED_PROTOTYPE.md) for `glove_upper_plate_as5600`; other parts from [STL/glove](https://github.com/Toyota/yubi-hw/tree/main/STL/glove). Right hand uses `FINGER with Gear_t30_R` and `FINGER with Gear_t20_L`. No bought metal gears for the glove. |
 
 The YAM adaptation is designed/simulated, **not physically validated**. Its wrist pattern
 (six M3 holes on a 27 mm pitch circle and a 35 mm boss) is an assumption pending measurement.
@@ -77,12 +88,12 @@ All quantities below are for the robot only.
 
 | Qty | Required part / important geometry | Source and observed parts price | Friday status / next route |
 |---|---|---|---|
-| 2 | `GEAKB1.0-30-6-B-8N-QFC17-M3-LL`; module 1, 30 teeth, 6 mm face, keyed Ø8 bore, QFC17 M3 face-hole feature | [MISUMI USA](https://us.misumi-ec.com/vona2/detail/110300428430/?HissuCode=GEAKB1.0-30-6-B-8N-QFC17-M3-LL), $42.51 each / **$85.02** | **Late:** displayed ship October 13. Ask for part-specific express or local modification of a compatible stock gear. Generic 30T/8 mm gears are not drop-in replacements. |
+| 2 | `GEAKB1.0-30-6-B-8N-QFC17-M3-LL`; module 1, 30 teeth, 6 mm face, keyed Ø8 bore, QFC17 M3 face-hole feature | [MISUMI USA](https://us.misumi-ec.com/vona2/detail/110300428430/?HissuCode=GEAKB1.0-30-6-B-8N-QFC17-M3-LL), $42.51 each / **$85.02** | **Late:** October 7 cart showed ship October 14. Ask for part-specific express or local modification of a compatible stock gear. Generic 30T/8 mm gears are not drop-in replacements. |
 | 1 | `SSFRHQ8-20-F6-P5-T6-Q5-KC8-A12`, configured Ø8 stepped/keyed left finger shaft | [MISUMI USA](https://us.misumi-ec.com/vona2/detail/110300088230/?HissuCode=SSFRHQ8-20-F6-P5-T6-Q5-A12-KC8), **$26.71** | **Late:** displayed ship October 14. Local turning/keyway quote must use the full configured drawing, not only overall diameter/length. |
-| 3 | `MTA05-13ZZ DBS`, NSK Micro/ISC angular-contact bearing, nominal 5 × 13 × 5 mm | [MISUMI USA](https://us.misumi-ec.com/vona2/detail/221000531127/?HissuCode=MTA05-13ZZ%20DBS), $23.58 each / **$70.74**; [Volition](https://www.govolition.com/product/V52-MTA05-13ZZ%20DBS) lists the same MISUMI supply | **Unconfirmed.** Volition's estimated three days to ship is not Friday delivery or independent stock. Do not replace with 695ZZ plus a shim. |
+| 3 | `MTA05-13ZZ DBS`, NSK Micro/ISC angular-contact bearing, nominal 5 × 13 × 5 mm | [MISUMI USA](https://us.misumi-ec.com/vona2/detail/221000531127/?HissuCode=MTA05-13ZZ%20DBS), $23.58 each / **$70.74**; [Volition](https://www.govolition.com/product/V52-MTA05-13ZZ%20DBS) lists the same MISUMI supply | **Unconfirmed:** October 7 cart has no ship date. Volition's estimated three days to ship is not Friday delivery or independent stock. Preserve these bearings for the proper build; 695ZZ plus a printed shim is only the documented prototype stand-in. |
 | 3 | `WSSAB10-5-1`, nominal Ø10 OD / Ø5 ID / 1 mm thickness | [MISUMI USA](https://us.misumi-ec.com/vona2/detail/110302677010/?HissuCode=WSSAB10-5-1), $23.42 each / **$70.26** | **Late:** ship October 10. Seek a stocked precision spacer or add to local machining quote. Generic M5 washers are not automatically equivalent. |
 | 2 | `KEG3-8`, 3 × 3 × 8 mm, one round end and one square end | [MISUMI USA](https://us.misumi-ec.com/vona2/detail/110302681730/?HissuCode=KEG3-8), $3.90 each / **$7.80**; [Huyett 330303-008](https://www.huyett.com/330303-008) has matching nominal Form AB geometry | **Late** at MISUMI: ship October 10. Huyett is special-order with a $50 minimum, not a verified fast/cheap alternative. Ask shop to supply/finish keys. |
-| 1 | Round locating pin `JPBPB2-3` | [MISUMI USA](https://us.misumi-ec.com/vona2/detail/110300557320/?HissuCode=JPBPB2-3), **$7.05** | **Stock/ship candidate:** October 7–8 dispatch; shipping cost and arrival unquoted. |
+| 1 | Round locating pin `JPBPB2-3` | [MISUMI USA](https://us.misumi-ec.com/vona2/detail/110300557320/?HissuCode=JPBPB2-3), **$7.05** | **Stock/ship candidate:** October 8 dispatch; shipping cost and arrival unquoted. |
 | 1 | Diamond locating pin `JPDPB2-3` | [MISUMI USA](https://us.misumi-ec.com/vona2/detail/110300557320/?HissuCode=JPDPB2-3), **$9.89** | **Late:** ship October 15. Ask about a stocked same-fit material variant or local modification of a round pin to the drawing. |
 
 **Precision corrections:** the locating pins are not ordinary Ø2 × 3 mm dowels:
@@ -106,7 +117,7 @@ bearing, key or shaft substitute is selected.
 
 **Concrete gear-blank route for a shop to quote:**
 [KHK SSA1-30](https://catalog.khkgears.us/item/spur-gears/hubless-spur-gears-ssa/ssa1-30)
-is **$13.45 each / $26.90 for two**, with **five on hand** displayed by KHK USA.
+is **$13.45 each / $26.90 for two**, with **five on hand** at the original KHK USA check.
 It is unhardened S45C steel, module 1, 30 teeth, 20° pressure angle, Ø8 plain bore,
 Ø32 outside diameter, **10 mm face width** and JIS N8 quality. It needs a shop's
 geometry review, width reduction to 6 mm, keyway and the configured face features;
@@ -119,26 +130,27 @@ does not meet the deadline. Do not order blanks until a shop accepts the convers
 
 | Qty to buy | Part | Source / observed price | Delivery / compatibility |
 |---|---|---|---|
-| 2 | ELP `USBFHD01M-L180` camera: one robot, one glove | [Amazon US](https://www.amazon.com/dp/B00LQ854AG), **$31.29 each used-like-new**, Amazon Resale; **$62.58 total + $0 Prime shipping** | Page showed Friday October 9 to 94158, with quantity 2 selected and only two in stock. Lowest verified camera offer; condition is used-like-new. New was $44.99 each; recheck its selected-offer delivery. |
-| 1 | Seeed XIAO ESP32C6 `113991254` | [DigiKey](https://www.digikey.com/en/products/detail/seeed-technology-co-ltd/113991254/24613066), **$5.38**, 179 in stock | Combine with encoder/perfboard; delivery conditional on dispatch and chosen shipping. |
-| 1 | Original AS5601 breakout, 20 × 13.5 mm, mounting holes 15 mm apart | [Switch Science #3494](https://www.switch-science.com/products/3494), ¥1,780 listed, magnet included | Exact Toyota footprint; Japan shipping and Friday arrival **not quoted**. |
-| 1 instead of original | US-stock AS5601 alternative: `MIKROE-4204` Magneto 8 Click | [DigiKey](https://www.digikey.com/en/products/detail/mikroelektronika/MIKROE-4204/13157462), **$18**, two in stock | Same AS5601 IC and I²C interface, **different board/holder**. Confirm 3.3 V configuration, wiring, clearance, sensor alignment and calibration before adopting. Magnet not listed as included. |
-| 1 alternate option | AS5601 `AS5601-SO_EK_AB` adapter | [DigiKey](https://www.digikey.com/en/products/detail/ams-osram-ag/AS5601-SO-EK-AB/5066883), **$19.40**, one in stock | Alternative to the $18 board, not an additional purchase. Also needs footprint/mount review. |
-| 1 if US board used | Diametric encoder magnet, Radial Magnets `9042`, Ø6 × 2.5 mm, N35 | [DigiKey](https://www.digikey.com/en/products/detail/radial-magnets-inc/9042/5640338), **$0.63**, 20,539 in stock | Confirm Toyota magnet pocket and sensor airgap. Must be **diametrically**, not axially, magnetized. |
-| 1 | SparkFun `PRT-08808` perfboard, 25.4 × 25.4 mm | [DigiKey](https://www.digikey.com/en/products/detail/sparkfun-electronics/08808/7387401), **$2.96**, 4,983 in stock | Exact original perfboard. |
+| 2 | ELP `USBFHD01M-L180` camera: one robot, one glove | [Amazon US](https://www.amazon.com/dp/B00LQ854AG), **$44.99 each new / $89.98 total** | October 7 check with quantity 2 showed Friday October 9 to 94158 with Prime. The cheaper used-like-new offer now misses Friday. Guest shipping misses Friday; sign-in and selected-offer confirmation required. |
+| 1 | Seeed XIAO ESP32C6 `113991254` | [DigiKey](https://www.digikey.com/en/products/detail/seeed-technology-co-ltd/113991254/24613066), **$5.38** | Immediate availability in the prepared cart; combine with perfboard/magnets. Delivery conditional on dispatch and chosen shipping. |
+| 2 (1 spare) | Adafruit `6357` AS5600 breakout | [DigiKey 1528-6357-ND](https://www.digikey.com/en/products/detail/adafruit-industries-llc/6357/26832926), **$5.95 each / $11.90** | Immediate availability in the overnight DigiKey cart. Use `glove_upper_plate_as5600` and four extra M2×6 screws. Separate Adafruit cart remains empty. Actual Friday arrival remains unconfirmed. |
+| 2 (1 spare) | Diametric encoder magnet, Radial Magnets `9042`, Ø6 × 2.5 mm, N35 | [DigiKey](https://www.digikey.com/en/products/detail/radial-magnets-inc/9042/5640338), **$0.63 each / $1.26** | Immediate availability in the prepared cart. Board ships without a magnet. Use the documented 2 mm sensor gap. Must be **diametrically**, not axially, magnetized. |
+| 1 | SparkFun `PRT-08808` perfboard, 25.4 × 25.4 mm | [DigiKey](https://www.digikey.com/en/products/detail/sparkfun-electronics/08808/7387401), **$2.96** | Exact original perfboard; Immediate availability in the prepared cart. |
 | As needed | Pin headers / short hookup wires / solder | Check XIAO package and existing supplies; Toyota lists four header pieces | Header installation is required. Avoid ordering a new soldering kit unless missing. |
-| 1 shared sheet | Grip rubber; original 1.5 mm `PX-10H15 HYPER V` | [RAPOLL solid neoprene, 12 × 12 in × 1/16 in](https://www.amazon.com/dp/B0BKQRN7S6), **$6.89 + free Prime shipping**, Thursday October 8 shown | Lowest-priced sheet checked; **material/thickness substitution** (nominal 1.5875 mm). Check grip, compliance, attachment and recalibrate jaw opening. Not equal-performance certification. |
+| 0 (already owned) | Grip rubber; original 1.5 mm `PX-10H15 HYPER V` | Janos's Everbilt rubber packing sheet, 6 × 6 in × 1/16 in (Home Depot 1006950747), already tested on wires. Fallback if grip is insufficient: [RAPOLL solid neoprene, 12 × 12 in × 1/16 in](https://www.amazon.com/dp/B0BKQRN7S6), $6.89 | **Thickness substitution** (nominal 1.59 mm vs 1.5 mm): recalibrate the jaw's closed position. Glue with Loctite Ultra Gel Control. |
 | 1 alternative pack | Nominal 1.5 mm silicone sheet | [PATIKIL, five Ø100 mm discs](https://www.amazon.com/dp/B0G2JR4VFQ), **$9.21 + free Prime shipping**, Thursday shown in search | Alternative to neoprene, not an additional purchase. Check cutting layout and suitable silicone adhesive; grip performance is unvalidated. [Original Hyper V](https://nisshinrubber-metalcraft.com/products/hyperv%E3%82%B7%E3%83%BC%E3%83%88-px-10h-15-%E8%80%90%E6%B2%B9w270-l270-h1-5mm) remains the reference. |
 | 1 band from pack | Return band, original Japanese No.16 | [MOWPOG #16 pack](https://www.amazon.com/dp/B0FCM95WH7), **$5.99 + free Prime shipping**, Thursday October 8 shown | Listing specifies 2.37 in folded length and 0.06 in width/thickness. Check return force and full travel; the size number alone is not equivalence. Reusing a suitable existing band avoids buying hundreds for one glove. |
 | 0 | USB data cables/connections | Already available | Verify connector ends on the actual camera and XIAO; do not blindly order two USB-C cables. |
 
 [DigiKey US shipping rates](https://www.digikey.com/en/help-support/delivery-information/delivery-time-and-cost):
-two-day air **$13.99/order**, overnight PM **$26.99/order**. The $18 encoder + XIAO +
-perfboard + magnet subtotal is **$26.97**: **$40.96 with two-day air** or **$53.96 with
-overnight PM**, before tax/possible tariffs. These are rate-based estimates, not a
-checkout-confirmed delivered quote. DigiKey currently warns that processing may take
-an extra business day. Two-day requires Wednesday dispatch for Friday; overnight
-requires Thursday dispatch. Mount adaptation remains separate work/cost.
+two-day air **$13.99/order**, overnight PM **$26.99/order**. The prepared cart contains
+one each of XIAO and perfboard plus two each of Adafruit 6357 and Radial 9042 (one
+spare), **$21.50 parts**, with **FedEx Overnight P.M. selected**. Estimated tariff is
+about **$0.68** (October 7 estimate scaled; recheck), for about **$49.17 before tax**.
+Friday arrival to 94158 is not displayed. DigiKey warns that processing may take an
+extra business day: overnight requires dispatch by Thursday October 8. `MIKROE-4204`
+does not fit the glove and is removed; the `AS5601-SO_EK_AB` fallback is dropped too.
+The separate Adafruit cart remains empty; the 6357 board is in the DigiKey cart.
+Solder VIN (3.3 V), GND, SCL and SDA directly to the XIAO; no QT cable is needed.
 
 ## Screws — consolidated quantities for both builds
 
@@ -148,30 +160,35 @@ M2 × 0.4, M2.5 × 0.45 and M3 × 0.5 threads.
 
 | Robot | Glove | Buy/use total | Screw | Source / current status |
 |---:|---:|---:|---|---|
-| 4 | 4 | 8 | M2 × 6, standard socket head | [Amazon assortment candidate](https://www.amazon.com/dp/B0G8F366MV), $8.99 per kit, free Prime Thursday shown; also includes several sizes below. |
-| 2 | 2 | 4 | M2.5 × 6, standard socket head | Same kit; [McMaster 91290A101](https://www.mcmaster.com/91290A101/) fallback, $11.81/50. |
-| 0 | 2 | 2 | M2.5 × 8, standard socket head | Same kit; [McMaster 91290A006](https://www.mcmaster.com/91290A006/) fallback, $11.71/100. |
-| 4 | 0 | 4 | M2.5 × 10, standard socket head | [VGBUY M2.5 1001-piece kit](https://www.amazon.com/dp/B0FJ1YMG3J), **$7.99 Prime price**, free Prime Thursday shown in search. Also covers M2.5 × 6/8. [McMaster 91290A007](https://www.mcmaster.com/91290A007/) fallback is $11.03/100. |
+| 4 | 8 | 12 | M2 × 6, standard socket head | [mxuteuk M2-only 520-piece kit](https://www.amazon.com/dp/B0C6M6MJ8M), **$8.99**, explicitly lists **30 M2×6**; Friday with Prime shown. Glove count includes four extra AS5600 mount screws. Original mixed kit removed: it contains M2×12/16, no M2×6. |
+| 2 | 2 | 4 | M2.5 × 6, standard socket head | Included in the VGBUY M2.5 kit below; [McMaster 91290A101](https://www.mcmaster.com/91290A101/) fallback, $11.81/50. |
+| 0 | 2 | 2 | M2.5 × 8, standard socket head | Included in the VGBUY M2.5 kit below; [McMaster 91290A006](https://www.mcmaster.com/91290A006/) fallback, $11.71/100. |
+| 4 | 0 | 4 | M2.5 × 10, standard socket head | [VGBUY M2.5 1001-piece kit](https://www.amazon.com/dp/B0FJ1YMG3J), **$9.99 guest cart**, advertised Prime deal $7.99; October 8 with Prime shown. Also covers M2.5 × 6/8. [McMaster 91290A007](https://www.mcmaster.com/91290A007/) fallback is $11.03/100. |
 | 3 | 3 | 6 | M2.5 × 15, standard socket head | [McMaster 91290A009](https://www.mcmaster.com/91290A009/), **$4.25/10**, Thursday delivery shown; final shipping unquoted. |
-| 0 | 1 | 1 | M3 × 6, standard socket head | Included in $8.99 kit. |
-| 4 | 0 | 4 | M3 × 8, standard socket head | Included in $8.99 kit. |
-| 6 | 0 | 6 | M3 × 10, standard socket head | [ALLWIN M3 400-piece kit](https://www.amazon.com/dp/B0F5QKDW7Y), **$4.63 Prime price**, free Prime Thursday shown in search; includes 30 screws of this length plus M3 × 6/8/12/16/20. |
-| 2 | 0 | 2 | M3 × 12, standard socket head | Included in $8.99 kit. |
-| 6 | 0 | 6 | M2 × 5, ultra-low head: Ø4 × 0.5 mm head | [MISUMI CBSTBR2-5](https://us.misumi-ec.com/vona2/detail/110302280540/?HissuCode=CBSTBR2-5), **$5.24 each / $31.44**; same steel/geometry, black nickel instead of white. October 7–8 dispatch shown. Original CBSTNR2-5 ships October 10. |
-| 4 | 0 | 4 | M3 × 8, ultra-low head: Ø6 × 0.8 mm head | [MISUMI CBSTNR3-8](https://us.misumi-ec.com/vona2/detail/110302280540/?HissuCode=CBSTNR3-8), **$5.05 each / $20.20**, October 7–8 dispatch shown. |
-| 0 | 2 | 2 | M3 × 5, ultra-low head: Ø6 × 0.8 mm head | [MISUMI CBSTNR3-5](https://us.misumi-ec.com/vona2/detail/110302280540/?HissuCode=CBSTNR3-5), **$5.05 each / $10.10**, October 7–8 dispatch shown. |
+| 0 | 1 | 1 | M3 × 6, standard socket head | Included in the ALLWIN M3 kit below. |
+| 4 | 0 | 4 | M3 × 8, standard socket head | Included in the ALLWIN M3 kit below. |
+| 6 | 0 | 6 | M3 × 10, standard socket head | [ALLWIN M3 400-piece kit](https://www.amazon.com/dp/B0F5QKDW7Y), **$5.79 guest cart**, advertised Prime deal $4.63; October 9 with Prime shown. Includes 30 screws of this length plus M3 × 6/8/12/16/20. |
+| 2 | 0 | 2 | M3 × 12, standard socket head | Included in the ALLWIN M3 kit above. |
+| 6 | 0 | 6 | M2 × 5, ultra-low head: Ø4 × 0.5 mm head | [MISUMI CBSTBR2-5](https://us.misumi-ec.com/vona2/detail/110302280540/?HissuCode=CBSTBR2-5), **$5.24 each / $31.44**; same steel/geometry, black nickel instead of white. October 8 dispatch shown. Original CBSTNR2-5 ships October 10. |
+| 4 | 0 | 4 | M3 × 8, ultra-low head: Ø6 × 0.8 mm head | [MISUMI CBSTNR3-8](https://us.misumi-ec.com/vona2/detail/110302280540/?HissuCode=CBSTNR3-8), **$5.05 each / $20.20**, October 8 dispatch shown. |
 | 6 | 0 | 6 | M3 × 6, low head for rotor → coupler | [McMaster 92855A307](https://www.mcmaster.com/92855A307/), **$7.30/25**, Ø5.5 × 2 mm head, Thursday 7–9 am shown. |
 | 4 | 0 | 4 | M3 × 8, low head for stator → motor bracket | [McMaster 92855A309](https://www.mcmaster.com/92855A309/), **$7.55/25**, 18-8 stainless, DIN 7984, Ø5.5 × 2 mm head, Thursday shown. [Alloy-steel 93070A064](https://www.mcmaster.com/93070A064/) is $13.62/50 if higher strength is required. |
 | 2 | 0 | 2 | M2 × 8, low head for motor bracket → case back | [McMaster 92855A839](https://www.mcmaster.com/92855A839/), **$20.40/10**, Ø3.8 × 1.35 mm head, Thursday 7–9 am shown. |
 
 McMaster dates above are displayed site estimates; the final destination/shipping
 charge was not entered or quoted. MISUMI stocked rows also require a delivered quote.
-The Amazon kit's stated lengths are 6/8/12/16/20 mm: it is **not a complete screw kit**
-for this build. Do not buy every fallback pack as well as the kit.
+The original [888-piece mixed kit](https://www.amazon.com/dp/B0G8F366MV) has only
+M2×12/16 in its size diagram and cannot cover M2×6. The replacement M2-only kit's
+packaging text explicitly lists 30 M2×6, leaving **18 spare** after the required 12.
+Its size diagram has mislabeled entries, so the count is taken from the packaging
+text. The two CBSTNR3-5 mount screws per glove are no longer required by the AS5600
+plate. Do not buy every fallback pack as well as the selected kits.
 
-One checked standard-screw combination is the $8.99 mixed kit + $7.99 M2.5 kit +
-$4.63 M3 kit + $4.25 McMaster M2.5 × 15 pack: **$25.86**, including free Prime
-shipping on the three Amazon kits, **plus the McMaster order's shipping and tax**.
+The prepared standard-screw combination is the **$8.99 M2 kit + $9.99 M2.5 kit +
+$5.79 M3 kit + $4.25 McMaster M2.5 × 15 pack = $29.02** before freight/tax.
+Advertised Prime deals of $7.99 for M2.5 and $4.63 for M3 would reduce it to **$25.86**
+if applied after sign-in. All three Amazon kits show delivery by Friday with Prime,
+**plus the McMaster order's shipping and tax**.
 This covers every standard screw length above; special low/ultra-low heads are extra.
 Amazon search dates must be rechecked for the selected offer at checkout. Prime sale
 prices and the displayed nightly delivery cutoffs may expire.
@@ -181,6 +198,16 @@ The new adapter counterbores and screw engagement still need checking on the mac
 revision. Follow the manufacturer's reduced tightening torque for ultra-low heads.
 The listed 18-8 low-head screws have 70,000 psi tensile strength; confirm required
 joint preload/strength before substituting them for higher-strength alloy steel.
+
+## Printed-prototype stand-ins
+
+These are temporary purchases for the [printed prototype](PRINTED_PROTOTYPE.md),
+not precision-equivalent replacements for the proper-build parts.
+
+| Buy qty | Stand-in | Source / price | Fulfillment / use |
+|---|---|---|---|
+| 1 pack of 10; use 3 | 695ZZ deep-groove bearings, 5 × 13 × 4 mm | [KABOBEARING](https://www.amazon.com/dp/B0CRP3K8ZF), **$6.99** guest cart; advertised Prime deal $5.59 | October 8 with Prime shown. Cheapest matching Friday-capable pack found in the ascending-price search. Print three `bearing_shim_1mm` parts under the outer races. |
+| 1 pack of 2; use 1 | M5 × 0.8 × 70 mm socket-head cap screw | [Home Depot Everbilt 844868, SKU 540934](https://www.homedepot.com/p/204283625), **$3.97** | **Bought** at Hayward on October 7. Use one screw and keep one spare. |
 
 ## Inserts for printed parts
 
@@ -214,46 +241,59 @@ qualification**. Exact Tokai US stock remains unresolved. A cheaper $9.99 Dianru
 assortment was rejected as a complete kit because it lacks the needed M2 × 3 and
 M3 × 5 lengths; the $9.99 KADRICK M3-only kit showed October 12 delivery.
 
-For **machined coupler/flange**, do not buy their extra four M2 and two M3 plastic
-heat-set inserts. Their metal-thread design replaces those inserts. If the adapters
-are instead printed, add those six inserts, with dimensions selected for the actual CAD.
+For the **machined coupler/flange**, metal threads replace the adapter inserts.
+For the printed pair, add **four M2×3 and two M3×5 inserts** to the base counts.
+The selected single kits cover **8 M2×3 / 60 available**, **10 M2.5×4 / 60**,
+**6 M3×5 / 50**, and **2 M3×4 / 50**. These counts include the printed adapters;
+keep the existing printed-hole fit/strength checks.
 
 ## Glove-only adjustment hardware
 
 | Qty | Part | Source / parts price | Friday status |
 |---|---|---|---|
-| 4 | `JZF8-5` POM flanged bushings, nominal ID8 / OD10 / overall length5 mm | [MISUMI USA](https://us.misumi-ec.com/vona2/detail/110302640340/?HissuCode=JZF8-5), **$2.70 each / $10.80** | October 7–8 dispatch shown; delivery/shipping quote pending. |
-| 1 | M3 × 6 long knurled screw, original `LRLM3-6` | [MISUMI LRLB3-6](https://us.misumi-ec.com/vona2/detail/110300245210/?HissuCode=LRLB3-6), **$6.06** | Same geometry in 303 stainless, Ø5.5 head × 10 mm high; October 7–8 dispatch. Original plated-steel LRLM3-6 is $5.78 but ships October 12. |
+| 4 | `JZF8-5` POM flanged bushings, nominal ID8 / OD10 / overall length5 mm | [MISUMI USA](https://us.misumi-ec.com/vona2/detail/110302640340/?HissuCode=JZF8-5), **$2.70 each / $10.80** | October 8 dispatch shown; delivery/shipping quote pending. |
+| 1 | M3 × 6 long knurled screw, original `LRLM3-6` | [MISUMI LRLB3-6](https://us.misumi-ec.com/vona2/detail/110300245210/?HissuCode=LRLB3-6), **$6.06** | Same geometry in 303 stainless, Ø5.5 head × 10 mm high; October 8 dispatch. Original plated-steel LRLM3-6 is $5.78 but ships October 12. |
 | 1 | `AJKTNS5-70`, M5 × 0.8, 70 mm adjustment screw | [MISUMI USA](https://us.misumi-ec.com/vona2/detail/110300599320/?HissuCode=AJKTNS5-70), **$15.14**; [black-oxide steel AJKTN5-70](https://us.misumi-ec.com/vona2/detail/110300599320/?HissuCode=AJKTN5-70), **$7.23** | **Both late:** ship October 12. Add to local-shop request. A stock bolt + knob needs tip/head/clearance review, not just a matching M5 thread. |
-| 1 | `HNTT5-5` M5 pre-insertion T-slot nut | [MISUMI USA](https://us.misumi-ec.com/vona2/detail/110302246150/?HissuCode=HNTT5-5), **$0.73** | October 7–8 dispatch shown; delivered price/date pending. Exact pocket geometry, not a generic “2020” nut. |
+| 1 | `HNTT5-5` M5 pre-insertion T-slot nut | [MISUMI USA](https://us.misumi-ec.com/vona2/detail/110302246150/?HissuCode=HNTT5-5), **$0.73** | October 8 dispatch shown; delivered price/date pending. Exact pocket geometry, not a generic “2020” nut. |
 
 ## Order groups and shipping comparison
 
-These are **partial order groups**, not a complete build budget or purchase instruction.
-No full-build minimum delivered price can be claimed before machining and late-part
-quotes are returned. Material/fit substitutions below still need the checks above.
+The [proposed shopping list](SHOPPING_LIST_2026-10-09.md) records the six prepared
+carts, purchase quantities and shared-pack count audit. These remain **partial
+order groups**, not a complete build budget: tax, unquoted freight and custom
+machining are excluded. Nothing has been ordered. Material/fit substitutions still
+need the checks above.
 
 | Order group | Checked contents | Parts / shipping / status |
 |---|---|---|
-| Amazon | Two used-like-new cameras, three standard screw kits, neoprene sheet and band pack | **$97.07 + $0 Prime shipping**, before tax. Add **$25.97** only if adapting prints for the two insert kits. Camera offer Friday, other listed offers Thursday at check. |
-| McMaster | M2.5 × 15 pack and three low-head packs | **$39.50 + shipping + tax**, verified in an unsubmitted four-line guest basket. Site estimates Thursday. ZIP alone did not calculate shipping; final checkout/contact details are still required. |
-| MISUMI stocked candidates | Six CBSTBR2-5, four CBSTNR3-8, two CBSTNR3-5, four JZF8-5, one LRLB3-6, one HNTT5-5, one JPBPB2-3 | **$86.38 + shipping + tax**. Displayed October 7–8 dispatch; choose a service with actual Friday arrival. Keep late items off this shipment. |
-| DigiKey | US AS5601 board, XIAO, perfboard, diametric magnet | **$26.97 parts + $13.99 two-day = $40.96**, or **$53.96 overnight PM**, before tax/tariffs. Dispatch and board-mount validation required. |
-| KHK + local machine shop | Two SSA1-30 blanks, conversion and custom machined parts | **$26.90 for blanks**; freight, engineering, machining and Friday pickup all **quote required**. Excluded from stocked-groups subtotal. |
+| Amazon | Two new cameras; one each M2/M2.5/M3 screw kit, #16 band pack, both KADRICK kits and ten-pack of 695ZZ bearings | **$153.70 parts** (neoprene dropped). Prime delivery dates to be reconfirmed; guest shipping is slower. Advertised Prime deals would reduce parts to about $149.14 if applied after sign-in. |
+| McMaster | One M2.5×15 ten-pack; one each of the three low-head packs | **$39.50 + shipping + tax** in the unsubmitted cart. Site estimates Thursday; destination-specific freight/arrival remain unquoted. Shared low-head packs cover 6/25 M3×6, 4/25 M3×8 and 2/10 M2×8. |
+| MISUMI stocked | CBSTBR2-5 ×6, CBSTNR3-8 ×4, JZF8-5 ×4, LRLB3-6 ×1, HNTT5-5 ×1, JPBPB2-3 ×1 | **$76.28 + shipping + tax**. October 8 dispatch displayed; next-day shipping needs a quote/login to confirm Friday arrival. CBSTNR3-5 removed. Keep late items separate. |
+| DigiKey | One each XIAO and perfboard; two each Adafruit 6357 and Radial 9042 (one spare) | **$21.50 parts + $26.99 selected overnight PM + about $0.68 estimated tariffs = about $49.17 before tax**. All Immediate; Friday arrival no longer possible. Separate Adafruit cart remains empty. |
+| Home Depot, Hayward | One two-pack of Everbilt M5×0.8×70 socket-head screws | **$3.97 + tax, bought October 7.** Use one screw, keep one spare. |
+| MISUMI late / proper build | Two gears, one stepped shaft, three MTA05-13ZZ DBS, three spacers, two keys, one diamond pin, one AJKTNS5-70 | **$285.56 + shipping + tax** in the separate cart. Freight unselected/login required. Gears/shaft dispatch October 14, pin October 15, bearings undated. Request partial shipment. |
 
-The first four groups total **$263.91 before tax**, **plus unquoted McMaster/MISUMI
-shipping**, using DigiKey two-day, and **excluding** inserts, all machining, finished
-gears/shafts, bearings, precision keys/spacers, diamond pin, adjustment screw, adhesive
-and any missing wiring/printing supplies. Adding both candidate insert kits gives
-**$289.88 on the same incomplete basis**. Overnight DigiKey adds $13.00; selecting
-the alloy-steel M3 × 8 low-head pack instead of stainless adds $6.07.
+The five prototype/shared groups total **$322.62**, including selected DigiKey freight
+and estimated tariffs, before sales tax and unquoted McMaster/MISUMI freight. The
+late cart adds **$285.56**, making **$608.18** on the same incomplete basis.
+Custom machining (five preferred parts), adhesive and any missing wiring/printing
+supplies are excluded. The KHK gear-blank conversion remains a separately quoted
+alternative, not an additional purchase in these carts. Selecting the alloy-steel
+M3×8 low-head pack instead of stainless adds $6.07.
 
 [MISUMI shipping guidance](https://us.misumi-ec.com/guide/faq/shipping.html) and
 [McMaster delivery information](https://www.mcmaster.com/info/delivery).
 Do not assume free MISUMI/McMaster shipping or substitute a catalog dispatch date for
 arrival. Review the selected Prime offers and consolidated checkout totals before paying.
 
-## What still prevents a complete Friday shopping list
+## Delivery checks before ordering
+
+For the printed prototype, confirm Amazon Prime offers, quoted MISUMI next-day and
+McMaster arrival to 94158, and DigiKey dispatch despite the processing warning.
+All glove electronics are consolidated on DigiKey overnight. The Home Depot screws
+are already bought. The full checklist is in the [proposed shopping list](SHOPPING_LIST_2026-10-09.md).
+
+## What still prevents a complete proper build by Friday
 
 1. Confirm a shop's **price and Friday pickup commitment** for the five machining
    parts; release revised coupler/flange drawings and verify the physical wrist.
@@ -262,6 +302,6 @@ arrival. Review the selected Prime offers and consolidated checkout totals befor
 3. Confirm **three correct angular-contact bearings**, precision washers/keys and the diamond pin.
 4. Qualify candidate **insert fit/strength and rubber/band performance**, and secure the
    adjustment screw. Standard screw lengths and the T-nut now have priced sources.
-5. Choose the exact encoder board or validate a US-board mount; quote its actual shipping.
+5. Validate the selected AS5600 board/plate in the physical glove and confirm its shipping.
 6. Compare combined supplier carts, including shipping/tariffs/tax. Reconfirm all arrivals
    before ordering. Do not count partial catalog subtotals as a complete delivered budget.
