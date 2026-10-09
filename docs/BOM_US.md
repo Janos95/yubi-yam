@@ -4,8 +4,10 @@ Scope: **one YAM robot gripper + one right-hand YUBI data-collection glove**.
 Target: **delivery to San Francisco 94158, or Bay Area pickup, by Friday October 9, 2026**.
 Prices initially checked October 6, 2026 (Pacific time); selected cart contents and
 prices updated October 7. USD, before tax unless stated. The purchase quantities
-cover **one robot and one right-hand glove**, including one Adafruit 6357 board
-and one Radial 9042 magnet. Buy one of each shared pack.
+cover **one robot and one right-hand glove**, plus a spare Adafruit 6357 board and
+Radial 9042 magnet (two of each bought). Buy one of each shared pack. Status October 8
+evening: the M5 screws are bought; Friday arrival is no longer possible for MISUMI,
+McMaster or DigiKey (expect Monday October 12). See the shopping list for details.
 Nothing in this list has been ordered. Stock and delivery estimates must be checked again at checkout.
 
 See the [proposed October 9 shopping list](SHOPPING_LIST_2026-10-09.md) for the prepared
@@ -130,19 +132,20 @@ does not meet the deadline. Do not order blanks until a shop accepts the convers
 |---|---|---|---|
 | 2 | ELP `USBFHD01M-L180` camera: one robot, one glove | [Amazon US](https://www.amazon.com/dp/B00LQ854AG), **$44.99 each new / $89.98 total** | October 7 check with quantity 2 showed Friday October 9 to 94158 with Prime. The cheaper used-like-new offer now misses Friday. Guest shipping misses Friday; sign-in and selected-offer confirmation required. |
 | 1 | Seeed XIAO ESP32C6 `113991254` | [DigiKey](https://www.digikey.com/en/products/detail/seeed-technology-co-ltd/113991254/24613066), **$5.38** | Immediate availability in the prepared cart; combine with perfboard/magnets. Delivery conditional on dispatch and chosen shipping. |
-| 1 | Adafruit `6357` AS5600 breakout | [DigiKey 1528-6357-ND](https://www.digikey.com/en/products/detail/adafruit-industries-llc/6357/26832926), **$5.95** | Immediate availability in the overnight DigiKey cart. Use `glove_upper_plate_as5600` and four extra M2×6 screws. Separate Adafruit cart remains empty. Actual Friday arrival remains unconfirmed. |
-| 1 | Diametric encoder magnet, Radial Magnets `9042`, Ø6 × 2.5 mm, N35 | [DigiKey](https://www.digikey.com/en/products/detail/radial-magnets-inc/9042/5640338), **$0.63** | Immediate availability in the prepared cart. Board ships without a magnet. Use the documented 2 mm sensor gap. Must be **diametrically**, not axially, magnetized. |
+| 2 (1 spare) | Adafruit `6357` AS5600 breakout | [DigiKey 1528-6357-ND](https://www.digikey.com/en/products/detail/adafruit-industries-llc/6357/26832926), **$5.95 each / $11.90** | Immediate availability in the overnight DigiKey cart. Use `glove_upper_plate_as5600` and four extra M2×6 screws. Separate Adafruit cart remains empty. Actual Friday arrival remains unconfirmed. |
+| 2 (1 spare) | Diametric encoder magnet, Radial Magnets `9042`, Ø6 × 2.5 mm, N35 | [DigiKey](https://www.digikey.com/en/products/detail/radial-magnets-inc/9042/5640338), **$0.63 each / $1.26** | Immediate availability in the prepared cart. Board ships without a magnet. Use the documented 2 mm sensor gap. Must be **diametrically**, not axially, magnetized. |
 | 1 | SparkFun `PRT-08808` perfboard, 25.4 × 25.4 mm | [DigiKey](https://www.digikey.com/en/products/detail/sparkfun-electronics/08808/7387401), **$2.96** | Exact original perfboard; Immediate availability in the prepared cart. |
 | As needed | Pin headers / short hookup wires / solder | Check XIAO package and existing supplies; Toyota lists four header pieces | Header installation is required. Avoid ordering a new soldering kit unless missing. |
-| 1 shared sheet | Grip rubber; original 1.5 mm `PX-10H15 HYPER V` | [RAPOLL solid neoprene, 12 × 12 in × 1/16 in](https://www.amazon.com/dp/B0BKQRN7S6), **$6.89 + free Prime shipping**, Thursday October 8 shown | Lowest-priced sheet checked; **material/thickness substitution** (nominal 1.5875 mm). Check grip, compliance, attachment and recalibrate jaw opening. Not equal-performance certification. |
+| 0 (already owned) | Grip rubber; original 1.5 mm `PX-10H15 HYPER V` | Janos's Everbilt rubber packing sheet, 6 × 6 in × 1/16 in (Home Depot 1006950747), already tested on wires. Fallback if grip is insufficient: [RAPOLL solid neoprene, 12 × 12 in × 1/16 in](https://www.amazon.com/dp/B0BKQRN7S6), $6.89 | **Thickness substitution** (nominal 1.59 mm vs 1.5 mm): recalibrate the jaw's closed position. Glue with Loctite Ultra Gel Control. |
 | 1 alternative pack | Nominal 1.5 mm silicone sheet | [PATIKIL, five Ø100 mm discs](https://www.amazon.com/dp/B0G2JR4VFQ), **$9.21 + free Prime shipping**, Thursday shown in search | Alternative to neoprene, not an additional purchase. Check cutting layout and suitable silicone adhesive; grip performance is unvalidated. [Original Hyper V](https://nisshinrubber-metalcraft.com/products/hyperv%E3%82%B7%E3%83%BC%E3%83%88-px-10h-15-%E8%80%90%E6%B2%B9w270-l270-h1-5mm) remains the reference. |
 | 1 band from pack | Return band, original Japanese No.16 | [MOWPOG #16 pack](https://www.amazon.com/dp/B0FCM95WH7), **$5.99 + free Prime shipping**, Thursday October 8 shown | Listing specifies 2.37 in folded length and 0.06 in width/thickness. Check return force and full travel; the size number alone is not equivalence. Reusing a suitable existing band avoids buying hundreds for one glove. |
 | 0 | USB data cables/connections | Already available | Verify connector ends on the actual camera and XIAO; do not blindly order two USB-C cables. |
 
 [DigiKey US shipping rates](https://www.digikey.com/en/help-support/delivery-information/delivery-time-and-cost):
 two-day air **$13.99/order**, overnight PM **$26.99/order**. The prepared cart contains
-one each of XIAO, perfboard, Adafruit 6357 and Radial 9042, **$14.92 parts**, with
-**FedEx Overnight P.M. selected**. Estimated tariff is **$0.47**, for **$42.38 before tax**.
+one each of XIAO and perfboard plus two each of Adafruit 6357 and Radial 9042 (one
+spare), **$21.50 parts**, with **FedEx Overnight P.M. selected**. Estimated tariff is
+about **$0.68** (October 7 estimate scaled; recheck), for about **$49.17 before tax**.
 Friday arrival to 94158 is not displayed. DigiKey warns that processing may take an
 extra business day: overnight requires dispatch by Thursday October 8. `MIKROE-4204`
 does not fit the glove and is removed; the `AS5601-SO_EK_AB` fallback is dropped too.
@@ -204,7 +207,7 @@ not precision-equivalent replacements for the proper-build parts.
 | Buy qty | Stand-in | Source / price | Fulfillment / use |
 |---|---|---|---|
 | 1 pack of 10; use 3 | 695ZZ deep-groove bearings, 5 × 13 × 4 mm | [KABOBEARING](https://www.amazon.com/dp/B0CRP3K8ZF), **$6.99** guest cart; advertised Prime deal $5.59 | October 8 with Prime shown. Cheapest matching Friday-capable pack found in the ascending-price search. Print three `bearing_shim_1mm` parts under the outer races. |
-| 1 pack of 2; use 1 | M5 × 0.8 × 70 mm socket-head cap screw | [Home Depot Everbilt 844868, SKU 540934](https://www.homedepot.com/p/204283625), **$3.97** | **Hayward pickup selected**, free, Today; three packs in stock October 7. Store #1017, 21787 Hesperian Blvd, Hayward CA 94541; aisle 21, bay 018. Janos is going today; use one screw and keep one spare. Nothing reserved or ordered. |
+| 1 pack of 2; use 1 | M5 × 0.8 × 70 mm socket-head cap screw | [Home Depot Everbilt 844868, SKU 540934](https://www.homedepot.com/p/204283625), **$3.97** | **Bought** at Hayward on October 7. Use one screw and keep one spare. |
 
 ## Inserts for printed parts
 
@@ -263,16 +266,16 @@ need the checks above.
 
 | Order group | Checked contents | Parts / shipping / status |
 |---|---|---|
-| Amazon | Two new cameras; one each M2/M2.5/M3 screw kit, neoprene sheet, #16 band pack, both KADRICK kits and ten-pack of 695ZZ bearings | **$160.59 parts**. Friday with Prime checked for the selected offers; guest shipping misses. Advertised Prime deals would reduce parts to about $156.03 if applied after sign-in. |
+| Amazon | Two new cameras; one each M2/M2.5/M3 screw kit, #16 band pack, both KADRICK kits and ten-pack of 695ZZ bearings | **$153.70 parts** (neoprene dropped). Prime delivery dates to be reconfirmed; guest shipping is slower. Advertised Prime deals would reduce parts to about $149.14 if applied after sign-in. |
 | McMaster | One M2.5×15 ten-pack; one each of the three low-head packs | **$39.50 + shipping + tax** in the unsubmitted cart. Site estimates Thursday; destination-specific freight/arrival remain unquoted. Shared low-head packs cover 6/25 M3×6, 4/25 M3×8 and 2/10 M2×8. |
 | MISUMI stocked | CBSTBR2-5 ×6, CBSTNR3-8 ×4, JZF8-5 ×4, LRLB3-6 ×1, HNTT5-5 ×1, JPBPB2-3 ×1 | **$76.28 + shipping + tax**. October 8 dispatch displayed; next-day shipping needs a quote/login to confirm Friday arrival. CBSTNR3-5 removed. Keep late items separate. |
-| DigiKey | One each XIAO, perfboard, Adafruit 6357 and Radial 9042 magnet | **$14.92 parts + $26.99 selected overnight PM + $0.47 estimated tariffs = $42.38 before tax**. All Immediate; processing warning/actual Friday arrival still need confirmation. Separate Adafruit cart remains empty. |
-| Home Depot, Hayward | One two-pack of Everbilt M5×0.8×70 socket-head screws | **$3.97 + tax**. Free Hayward pickup selected, Today; Janos is going today. Use one screw, keep one spare. Aisle 21, bay 018. Nothing reserved. |
+| DigiKey | One each XIAO and perfboard; two each Adafruit 6357 and Radial 9042 (one spare) | **$21.50 parts + $26.99 selected overnight PM + about $0.68 estimated tariffs = about $49.17 before tax**. All Immediate; Friday arrival no longer possible. Separate Adafruit cart remains empty. |
+| Home Depot, Hayward | One two-pack of Everbilt M5×0.8×70 socket-head screws | **$3.97 + tax, bought October 7.** Use one screw, keep one spare. |
 | MISUMI late / proper build | Two gears, one stepped shaft, three MTA05-13ZZ DBS, three spacers, two keys, one diamond pin, one AJKTNS5-70 | **$285.56 + shipping + tax** in the separate cart. Freight unselected/login required. Gears/shaft dispatch October 14, pin October 15, bearings undated. Request partial shipment. |
 
-The five prototype/shared groups total **$322.72**, including selected DigiKey freight
+The five prototype/shared groups total **$322.62**, including selected DigiKey freight
 and estimated tariffs, before sales tax and unquoted McMaster/MISUMI freight. The
-late cart adds **$285.56**, making **$608.28** on the same incomplete basis.
+late cart adds **$285.56**, making **$608.18** on the same incomplete basis.
 Custom machining (five preferred parts), adhesive and any missing wiring/printing
 supplies are excluded. The KHK gear-blank conversion remains a separately quoted
 alternative, not an additional purchase in these carts. Selecting the alloy-steel
@@ -287,8 +290,8 @@ arrival. Review the selected Prime offers and consolidated checkout totals befor
 
 For the printed prototype, confirm Amazon Prime offers, quoted MISUMI next-day and
 McMaster arrival to 94158, and DigiKey dispatch despite the processing warning.
-All glove electronics are consolidated on DigiKey overnight. Recheck Hayward pickup
-stock. The full checklist is in the [proposed shopping list](SHOPPING_LIST_2026-10-09.md).
+All glove electronics are consolidated on DigiKey overnight. The Home Depot screws
+are already bought. The full checklist is in the [proposed shopping list](SHOPPING_LIST_2026-10-09.md).
 
 ## What still prevents a complete proper build by Friday
 

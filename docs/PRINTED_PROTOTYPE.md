@@ -70,8 +70,9 @@ The board model used for the fit check is Adafruit's own
 
 These changes are incorporated in [BOM_US.md](BOM_US.md). The
 [proposed shopping list](SHOPPING_LIST_2026-10-09.md) uses one robot and one right-hand
-glove, with one encoder board and one magnet. All four glove-electronics lines
-are in the same overnight DigiKey cart.
+glove, with one encoder board and one magnet installed plus one spare of each. All
+glove-electronics lines are in the same overnight DigiKey cart. Grip rubber is the
+Everbilt 1/16 in packing sheet Janos already has (tested on wires).
 
 | Change | Per gripper / glove |
 |---|---|
@@ -80,7 +81,7 @@ are in the same overnight DigiKey cart.
 | encoder board: **Adafruit 6357** instead of MIKROE-4204 (the Mikroe board is 28.6×25.4 mm and doesn't fit the glove) | 1 per glove |
 | add M2×6 socket head screws for the board (covered by the replacement M2-only kit) | 4 per glove; 12 total with the original 4 robot + 4 glove screws |
 | remove CBSTNR3-5 encoder-mount screws | 2 per glove |
-| Radial Magnets 9042 diametric magnet; not included with the board | 1 for this glove |
+| Radial Magnets 9042 diametric magnet; not included with the board | 1 for this glove (+1 spare) |
 | skip for now: gears, stepped shaft, keys, precision washers, NSK bearings, diamond pin, machining | |
 
 ## Print list for this order
