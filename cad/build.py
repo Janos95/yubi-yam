@@ -89,6 +89,18 @@ class Params:
     motor_rotor_pcd: float = 27.0
     motor_stator_pcd: float = 50.0
     motor_clock_deg: float = 0.0       # stator holes at 0, 60, ... deg in the XZ plane
+    # Locating pins, measured on the YAM's gripper motor (label RD-J10D, DM4310 size):
+    # rotor: 2x Ø4 pins standing 4.2 proud, 120 deg apart on PCD 23.1 (24 over both
+    # pins), each midway between two rotor screw holes; the third midway hole is empty.
+    rotor_pin_d: float = 4.0
+    rotor_pin_pcd: float = 23.1
+    rotor_pin_len: float = 4.2
+    # stator ring: 2x Ø3 pins standing 5.5 proud, opposite each other on PCD 50,
+    # each 15 deg (6.5 mm) from a screw hole. Which side of the hole is not known for
+    # sure, so the bracket clears both sides.
+    stator_pin_d: float = 3.0
+    stator_pin_len: float = 5.5
+    stator_pin_offset_deg: float = 15.0
     # The thick right finger pad (PAD_t30_R) reaches 3 mm behind the case, at 82-107 deg
     # around the shaft and >= 26.6 mm out. The bracket gets a relief over the arc the pad
     # sweeps, and the stator screws inside that arc are left out (4 of 6 used).
@@ -222,11 +234,34 @@ def common_volume(a, b) -> float:
 # --------------------------------------------------------------------------------------
 # New parts
 # --------------------------------------------------------------------------------------
-def make_motor():
-    """DM4310 envelope, output facing +Y onto the driven shaft (reference only)."""
-    body = cyl_y(P.motor_d, STATOR_FACE_Y - P.motor_body_len, STATOR_FACE_Y, P.shaft_x, P.shaft_z)
-    boss = cyl_y(P.motor_boss_d, STATOR_FACE_Y, ROTOR_FACE_Y, P.shaft_x, P.shaft_z)
-    return body.fuse(boss).clean()
+def stator_pin_angles():
+    """Both candidate positions of the two stator-ring pins (15 deg either side of the
+    holes at 0 and 180 deg); the bracket clears all four, the motor sits in either way."""
+    o = P.stator_pin_offset_deg
+    return [P.motor_clock_deg + b + s * o for b in (0, 180) for s in (-1, 1)]
+
+
+def rotor_pin_angles():
+    """Midway between rotor screws (which sit at 30 + 60k): the coupler gets a pocket at
+    three of these, 120 deg apart, so the rotor's two pins fit in any of three clockings."""
+    return [0.0, 120.0, 240.0]
+
+
+def make_motor(with_pins=True):
+    """DM4310 envelope, output facing +Y onto the driven shaft (reference only).
+    Includes the measured locating pins (stator pins at every candidate position)."""
+    x, z = P.shaft_x, P.shaft_z
+    body = cyl_y(P.motor_d, STATOR_FACE_Y - P.motor_body_len, STATOR_FACE_Y, x, z)
+    boss = cyl_y(P.motor_boss_d, STATOR_FACE_Y, ROTOR_FACE_Y, x, z)
+    m = body.fuse(boss)
+    if with_pins:
+        for a in stator_pin_angles():
+            px, pz = polar(x, z, P.motor_stator_pcd / 2, a)
+            m = m.fuse(cyl_y(P.stator_pin_d, STATOR_FACE_Y, STATOR_FACE_Y + P.stator_pin_len, px, pz))
+        for a in rotor_pin_angles()[:2]:
+            px, pz = polar(x, z, P.rotor_pin_pcd / 2, a)
+            m = m.fuse(cyl_y(P.rotor_pin_d, ROTOR_FACE_Y, ROTOR_FACE_Y + P.rotor_pin_len, px, pz))
+    return m.clean()
 
 
 def make_coupler():
@@ -251,6 +286,10 @@ def make_coupler():
         hx, hz = polar(x, z, P.shaft_horn_pcd / 2, 90 * k)
         c = c.cut(cyl_y(3.1, P.shaft_face_y - 3.3, P.shaft_face_y + 1, hx, hz))
         c = c.cut(cyl_y(1.8, P.shaft_face_y - 5.5, P.shaft_face_y, hx, hz))
+    # pockets for the rotor's Ø4 locating pins (3 positions, pins use 2); 0.2 clearance
+    for a in rotor_pin_angles():
+        hx, hz = polar(x, z, P.rotor_pin_pcd / 2, a)
+        c = c.cut(cyl_y(P.rotor_pin_d + 0.2, ROTOR_FACE_Y - 1, ROTOR_FACE_Y + P.rotor_pin_len + 0.6, hx, hz))
     # centre M2.5 (optional, as on the horn): self-tapping pilot
     c = c.cut(cyl_y(2.1, P.shaft_face_y - 4.0, P.shaft_face_y + P.shaft_pilot_depth, x, z))
     return c.clean()
@@ -298,7 +337,16 @@ def make_motor_bracket(toyota):
     for ang in stator_holes():
         hx, hz = polar(x, z, P.motor_stator_pcd / 2, ang)
         plate = plate.cut(cyl_y(3.4, y0 - 1, y1 + 1, hx, hz))
-        plate = plate.cut(cyl_y(6.0, y1 - 2.5, y1 + 1, hx, hz))
+        plate = plate.cut(cyl_y(6.0, y1 - 2.0, y1 + 1, hx, hz))   # DIN 7984 head (2.0) flush;
+        # M3x8 then engages 4.0 of the ring's ~4.8 deep threads
+    # slots for the stator ring's Ø3 locating pins (5.5 proud), both candidate sides
+    for ang in stator_pin_angles():
+        r = P.motor_stator_pcd / 2
+        w = P.stator_pin_d / 2 + 0.4
+        plate = plate.cut(sector_y(r - w, r + w, ang - 3.5, ang + 3.5, y0 - 1, y1 + 1, x, z))
+        for e in (ang - 3.5, ang + 3.5):
+            ex, ez = polar(x, z, r, e)
+            plate = plate.cut(cyl_y(2 * w, y0 - 1, y1 + 1, ex, ez))
     # 2x M2 into the case back inserts (Toyota positions), heads on the motor side
     for zz in (1257.57, 1275.57):
         plate = plate.cut(cyl_y(2.4, y0 - 1, y1 + 1, 883.07, zz))

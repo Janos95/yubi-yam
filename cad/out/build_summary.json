@@ -16,6 +16,12 @@
   "motor_rotor_pcd": 27.0,
   "motor_stator_pcd": 50.0,
   "motor_clock_deg": 0.0,
+  "rotor_pin_d": 4.0,
+  "rotor_pin_pcd": 23.1,
+  "rotor_pin_len": 4.2,
+  "stator_pin_d": 3.0,
+  "stator_pin_len": 5.5,
+  "stator_pin_offset_deg": 15.0,
   "pad_relief_deg": [
    40.0,
    150.0
@@ -52,8 +58,8 @@
  },
  "parts": {
   "coupler": {
-   "volume_cm3": 4.32,
-   "pla_g_100pct": 5.4,
+   "volume_cm3": 4.13,
+   "pla_g_100pct": 5.1,
    "size_mm": [
     35.0,
     8.8,
@@ -61,8 +67,8 @@
    ]
   },
   "motor_bracket": {
-   "volume_cm3": 12.87,
-   "pla_g_100pct": 16.0,
+   "volume_cm3": 12.36,
+   "pla_g_100pct": 15.3,
    "size_mm": [
     79.4,
     14.0,
@@ -90,8 +96,8 @@
  },
  "interference": [],
  "mass_kg": {
-  "base": 0.4434,
-  "finger_r": 0.0983,
+  "base": 0.443,
+  "finger_r": 0.0982,
   "finger_l": 0.0935,
   "note": "DM4310 325 g, camera 20 g, screws ~15 g; printed parts at 60 % fill PLA"
  },

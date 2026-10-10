@@ -28,6 +28,14 @@ Designed and simulated, **not built yet**.
 
 ### Assumptions to check on the real arm
 
+**Checked on the real gripper motor (Oct 9).** The YAM's gripper motor (label
+RD-J10D) has the DM4310 face the parts assume: housing Ø57, rotor Ø35, 6× M3 on a
+27 mm circle in the rotor (≥7.5 deep), 6× M3 on a 50 mm circle in the front ring
+(~4.8 deep). It also has locating pins the reference model lacked: 2× Ø4 on the rotor
+(4.2 proud, 23.1 mm circle, 120° apart) and 2× Ø3 on the ring (5.5 proud, opposite
+each other, 15° from a screw hole). The coupler has pockets for the rotor pins and the
+motor bracket has slots for the ring pins.
+
 1. **Wrist screw pattern.** i2RT doesn't publish it, and their meshes have no holes.
    The flange assumes the gripper bolts straight onto the wrist's DM4310 rotor
    (6× M3 on a 27 mm circle around a 35 mm boss); the YAM's last link is 57 mm wide,
