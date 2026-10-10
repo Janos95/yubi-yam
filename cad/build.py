@@ -74,6 +74,12 @@ class WristInterface:
     pilot_d: float = 35.3              # recess that centres on the 35 mm rotor boss
     pilot_depth: float = 0.8
     phase_deg: float = 0.0             # rotation of the bolt pattern about the wrist axis
+    # If the wrist output is the same motor face as the gripper motor (measured), it also
+    # has 2x Ø4 pins, 4.2 proud, on PCD 23.1 midway between bolts: the flange gets pockets
+    # at all three midway positions so they fit whichever two are pinned.
+    pin_pcd: float = 23.1
+    pin_pocket_d: float = 4.2
+    pin_pocket_depth: float = 4.8      # above the rotor face (pins stand 4.2)
 
 
 @dataclass
@@ -375,6 +381,10 @@ def make_yam_flange():
         f = f.cut(cyl_z(w.bolt_clearance_d, WRIST_FACE_Z - 1, FLANGE_TOP_Z + 1, hx, hy))
         f = f.cut(cyl_z(w.head_counterbore_d, WRIST_FACE_Z + 6.0, FLANGE_TOP_Z + 1, hx, hy))
     f = f.cut(cyl_z(w.pilot_d, WRIST_FACE_Z - 1, WRIST_FACE_Z + w.pilot_depth, cx, cy))
+    for k in range(3):
+        a = math.radians(w.phase_deg + 180.0 / w.bolt_count + 120.0 * k)
+        hx, hy = cx + w.pin_pcd / 2 * math.cos(a), cy + w.pin_pcd / 2 * math.sin(a)
+        f = f.cut(cyl_z(w.pin_pocket_d, WRIST_FACE_Z - 1, WRIST_FACE_Z + w.pilot_depth + w.pin_pocket_depth, hx, hy))
     # Gripper -> flange, 4x M3:
     #  * 2x from the top through the bracket into M3 heat-set inserts (Toyota's bracket
     #    screws to the UR flange at these points; the other four fall in the trimmed area)

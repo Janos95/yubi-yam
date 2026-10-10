@@ -13,7 +13,7 @@
 
   <worldbody>
     <body name="gripper" pos="0 0 0" quat="0 0.70711 0.70711 0">
-      <inertial pos="-0.00419951 0.011121 -0.036657" mass="0.4430" diaginertia="0.000302742 0.000546557 0.000588837"/>
+      <inertial pos="-0.00419951 0.011121 -0.036657" mass="0.4429" diaginertia="0.000302673 0.000546434 0.000588704"/>
       <geom type="mesh" mesh="yubi_base" rgba="0.23 0.25 0.27 1" contype="0" conaffinity="0"/>
       <site name="tcp_site" pos="0 0 0" quat="0 1 0 0" size="0.005" rgba="1 0 0 1"/>
       <!-- grasp_site: between the pads, 8 mm up from their tips; fixed for all openings

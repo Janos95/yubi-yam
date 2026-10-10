@@ -7,7 +7,10 @@
    "head_counterbore_d": 6.0,
    "pilot_d": 35.3,
    "pilot_depth": 0.8,
-   "phase_deg": 0.0
+   "phase_deg": 0.0,
+   "pin_pcd": 23.1,
+   "pin_pocket_d": 4.2,
+   "pin_pocket_depth": 4.8
   },
   "motor_d": 57.0,
   "motor_body_len": 45.0,
@@ -85,8 +88,8 @@
    ]
   },
   "yam_flange": {
-   "volume_cm3": 36.92,
-   "pla_g_100pct": 45.8,
+   "volume_cm3": 36.72,
+   "pla_g_100pct": 45.5,
    "size_mm": [
     84.0,
     44.9,
@@ -96,7 +99,7 @@
  },
  "interference": [],
  "mass_kg": {
-  "base": 0.443,
+  "base": 0.4429,
   "finger_r": 0.0982,
   "finger_l": 0.0935,
   "note": "DM4310 325 g, camera 20 g, screws ~15 g; printed parts at 60 % fill PLA"
